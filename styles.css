@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Background Animation */
+body {
+    background: url('your-coding-background.jpg') repeat;
+    background-size: cover;
+    animation: backgroundScroll 30s linear infinite;
+}
+
+@keyframes backgroundScroll {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 0; }
+}
+
+/* Center Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+/* Title Styling */
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Icon Container */
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Icon Styles */
+.icon {
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* Discord Icon */
+.icon.discord {
+    background-image: url('discord-icon.png'); /* replace with your Discord icon */
+}
+
+/* Steam Icon */
+.icon.steam {
+    background-image: url('steam-icon.png'); /* replace with your Steam icon */
+}
+
+/* LRPI Icon */
+.icon.lrpi {
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Icon Hover Effect */
+.icon:hover {
+    transform: scale(1.1);
+}
