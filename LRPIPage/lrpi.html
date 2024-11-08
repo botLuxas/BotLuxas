@@ -58,8 +58,10 @@
         }
 
         .box img {
-            max-width: 100%;
-            height: auto;
+            width: 350px;
+            height: 500px;
+            object-fit: contain;
+            border: 1px solid #ddd;
         }
 
         .box h3 {
@@ -95,6 +97,53 @@
         .red { background-color: #FF0000; }
         .white { background-color: #FFFFFF; }
         .yellow { background-color: #FFFF00; }
+        .orange { background-color: #ffbb00; }
+        .tan { background-color: #f7d16c; }
+        .cream { background-color: #fff3d4; }
+        .brown { background-color: #5e3d22; }
+
+        .codebox {
+            width: 100%;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 10px;
+            background-color: #cacaca;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+         /* Modal background */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Bring above other content */
+    }
+
+    /* Modal content (image) */
+    .modal-content {
+        max-width: 80%; /* Larger than thumbnail */
+        max-height: 80%; /* Larger than thumbnail */
+        border: none; /* Remove any default border */
+        box-shadow: none; /* No box shadow */
+    }
+
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
     </style>
 </head>
 <body>
@@ -104,104 +153,956 @@
     </div>
 
     <div class="container">
+    <!-- Modal structure -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
         <!-- Box 1 -->
         <div class="box">
-            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <img src="Images/Arcade1.PNG" alt="Item 2">
             <div class="details">
-                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>NAME:</strong> Arcade Machine</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+                
+                <!-- Variant Dropdown -->
+                <label><strong>Variants:</strong></label>
+                <select onchange="changeImage(this)">
+                    <option value="Images/Arcade1.PNG">Arcade</option>
+                    <option value="Images/Arcade2.PNG">Candy</option>
+                    <option value="Images/Arcade3.PNG">Horror</option>
+                    <option value="Images/Arcade4.PNG">RaceRX</option>
+                </select>
+    
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_ArcadeMachine_01_Arcade_Kit<br>
+                    LRPI_Furniture_ArcadeMachine_01_Candy_Kit<br>
+                    LRPI_Furniture_ArcadeMachine_01_Horror_Kit<br>
+                    LRPI_Furniture_ArcadeMachine_01_RaceRX_Kit<br>
+                    LRPI_Furniture_ArcadeMachine_01_Arcade<br>
+                    LRPI_Furniture_ArcadeMachine_01_Candy<br>
+                    LRPI_Furniture_ArcadeMachine_01_Horror<br>
+                    LRPI_Furniture_ArcadeMachine_01_RaceRX
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed1.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Queen Size Bed</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+                   
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_01_Kit<br>
+                    LRPI_Furniture_Bed_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Single Bed</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+    
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_02_Kit<br>
+                    LRPI_Furniture_Bed_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed3.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Single Bed</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+    
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_03_Kit<br>
+                    LRPI_Furniture_Bed_03
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed4.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Single Bed</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_04_Kit<br>
+                    LRPI_Furniture_Bed_04
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed5.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Single Bed</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+      
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_05_Kit<br>
+                    LRPI_Furniture_Bed_05
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bed6.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Sleeping Bag</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 20</p>
+                <p><strong>Recolourable:</strong> Yes</p>
+    
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bed_06_Green_Kit<br>
+                    LRPI_Furniture_Bed_06_Blue_Kit<br>
+                    LRPI_Furniture_Bed_06_Grey_Kit<br>
+                    LRPI_Furniture_Bed_06_Pink_Kit<br>
+                    LRPI_Furniture_Bed_06_Purple_Kit<br>
+                    LRPI_Furniture_Bed_06_Red_Kit<br>
+                    LRPI_Furniture_Bed_06_Yellow_Kit<br>
+                    LRPI_Furniture_Bed_06_Black_Kit<br>
+                    LRPI_Furniture_Bed_06_LightBlue_Kit<br>
+                    LRPI_Furniture_Bed_06_White_Kit<br>
+                    LRPI_Furniture_Bed_06_Green<br>
+                    LRPI_Furniture_Bed_06_Blue<br>
+                    LRPI_Furniture_Bed_06_Grey<br>
+                    LRPI_Furniture_Bed_06_Pink<br>
+                    LRPI_Furniture_Bed_06_Purple<br>
+                    LRPI_Furniture_Bed_06_Red<br>
+                    LRPI_Furniture_Bed_06_Yellow<br>
+                    LRPI_Furniture_Bed_06_Black<br>
+                    LRPI_Furniture_Bed_06_LightBlue<br>
+                    LRPI_Furniture_Bed_06_White
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box light-blue"></div>
+                    <div class="color-box pink"></div>
+                    <div class="color-box purple"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box white"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/BoxingRing.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Boxing Ring</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+      
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_BoxingRing_02_Kit<br>
+                    LRPI_Furniture_BoxingRing_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/ArmbandCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Armband Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 20</p>
+      
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_ArmbandCabinet_01_Kit<br>
+                    LRPI_Furniture_ArmbandCabinet_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/FileCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> File Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 120</p>
+                <p><strong>Recolourable:</strong> Yes</p>
+      
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_FileCabinet_01_Black_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Green_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Grey_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Red_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_White_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Yellow_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Blue_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_LightBlue_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Pink_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Purple_Kit<br>
+                    LRPI_Furniture_FileCabinet_01_Black<br>
+                    LRPI_Furniture_FileCabinet_01_Green<br>
+                    LRPI_Furniture_FileCabinet_01_Grey<br>
+                    LRPI_Furniture_FileCabinet_01_Red<br>
+                    LRPI_Furniture_FileCabinet_01_White<br>
+                    LRPI_Furniture_FileCabinet_01_Yellow<br>
+                    LRPI_Furniture_FileCabinet_01_Blue<br>
+                    LRPI_Furniture_FileCabinet_01_LightBlue<br>
+                    LRPI_Furniture_FileCabinet_01_Pink<br>
+                    LRPI_Furniture_FileCabinet_01_Purple
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box light-blue"></div>
+                    <div class="color-box pink"></div>
+                    <div class="color-box purple"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box white"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabinet</p>
                 <p><strong>Lockable:</strong> Yes</p>
                 <p><strong>Cargo Size:</strong> 50</p>
+
+                <!-- Variant Dropdown -->
+                <label><strong>Variants:</strong></label>
+                <select onchange="changeImage(this)">
+                    <option value="Images/GunCabinet.PNG">Clean</option>
+                    <option value="Images/GunCabinetD.PNG">Damaged</option>
+                    <option value="Images/GunCabinetBD.PNG">Badly Damaged</option>
+                </select>
+      
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_GunCabinet_01_Kit<br>
+                    LRPI_Furniture_GunCabinet_Damaged_01_Kit<br>
+                    LRPI_Furniture_GunCabinet_Damaged_02_Kit<br>
+                    LRPI_Furniture_GunCabinet_01<br>
+                    LRPI_Furniture_GunCabinet_Damaged_01<br>
+                    LRPI_Furniture_GunCabinet_Damaged_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/MedicalCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Medical Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 120</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_MedicalCabinet_01_Kit<br>
+                    LRPI_Furniture_MedicalCabinet_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/MedicalCabinet2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Medical Wall Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_MedicalCabinet_Green_02_Kit<br>
+                    LRPI_Furniture_MedicalCabinet_Red_02_Kit<br>
+                    LRPI_Furniture_MedicalCabinet_Green_02<br>
+                    LRPI_Furniture_MedicalCabinet_Red_02
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box green"></div>
+                    <div class="color-box red"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/PistolCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Pistol Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_PistolCabinet_01_Kit<br>
+                    LRPI_Furniture_PistolCabinet_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenCabinet.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 250</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenCabinet_01_Kit<br>
+                    LRPI_Furniture_WoodenCabinet_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenCabinet2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 30</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenCabinet_02_Kit<br>
+                    LRPI_Furniture_WoodenCabinet_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenCabinet3.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 200</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenCabinet_03_Kit<br>
+                    LRPI_Furniture_WoodenCabinet_03
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenCabinet4.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Cabinet</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 200</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenCabinet_04_Kit<br>
+                    LRPI_Furniture_WoodenCabinet_04
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Carpet1.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Carpet</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Carpet_01_Kit<br>
+                    LRPI_Furniture_Carpet_02_Kit<br>
+                    LRPI_Furniture_Carpet_01<br>
+                    LRPI_Furniture_Carpet_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Carpet3.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Carpet</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Carpet_03_Kit<br>
+                    LRPI_Furniture_Carpet_03
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Carpet4.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Carpet</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Carpet_04_Kit<br>
+                    LRPI_Furniture_Carpet_04
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Carpet5.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Carpet</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+                <p><strong>Recolourable:</strong> Yes</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Carpet_05_Blue_Kit<br>
+                    LRPI_Furniture_Carpet_05_Pink_Kit<br>
+                    LRPI_Furniture_Carpet_05_Purple_Kit<br>
+                    LRPI_Furniture_Carpet_05_Red_Kit<br>
+                    LRPI_Furniture_Carpet_05_White_Kit<br>
+                    LRPI_Furniture_Carpet_05_Black_Kit<br>
+                    LRPI_Furniture_Carpet_05_Green_Kit<br>
+                    LRPI_Furniture_Carpet_05_LightBlue_Kit<br>
+                    LRPI_Furniture_Carpet_05_Yellow_Kit<br>
+                    LRPI_Furniture_Carpet_05_Grey_Kit<br>
+                    LRPI_Furniture_Carpet_05_Blue<br>
+                    LRPI_Furniture_Carpet_05_Pink<br>
+                    LRPI_Furniture_Carpet_05_Purple<br>
+                    LRPI_Furniture_Carpet_05_Red<br>
+                    LRPI_Furniture_Carpet_05_White<br>
+                    LRPI_Furniture_Carpet_05_Black<br>
+                    LRPI_Furniture_Carpet_05_Green<br>
+                    LRPI_Furniture_Carpet_05_LightBlue<br>
+                    LRPI_Furniture_Carpet_05_Yellow<br>
+                    LRPI_Furniture_Carpet_05_Grey
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box light-blue"></div>
+                    <div class="color-box pink"></div>
+                    <div class="color-box purple"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box white"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Cash1.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Cash Register</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 25</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_CashRegister_01_Kit<br>
+                    LRPI_Furniture_CashRegister_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Cash2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Cash Register</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 25</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_CashRegister_02_Kit<br>
+                    LRPI_Furniture_CashRegister_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Bench.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Bench</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Bench_01_Kit<br>
+                    LRPI_Furniture_Bench_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/CampingChair.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Camping Chair</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+                <p><strong>Recolourable:</strong> Yes</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_CampingChair_01_Blue_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Green_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Red_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Black_Kit<br>
+                    LRPI_Furniture_CampingChair_01_LightBlue_Kit<br>
+                    LRPI_Furniture_CampingChair_01_White_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Yellow_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Grey_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Pink_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Purple_Kit<br>
+                    LRPI_Furniture_CampingChair_01_Blue<br>
+                    LRPI_Furniture_CampingChair_01_Green<br>
+                    LRPI_Furniture_CampingChair_01_Red<br>
+                    LRPI_Furniture_CampingChair_01_Black<br>
+                    LRPI_Furniture_CampingChair_01_LightBlue<br>
+                    LRPI_Furniture_CampingChair_01_White<br>
+                    LRPI_Furniture_CampingChair_01_Yellow<br>
+                    LRPI_Furniture_CampingChair_01_Grey<br>
+                    LRPI_Furniture_CampingChair_01_Pink<br>
+                    LRPI_Furniture_CampingChair_01_Purple
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box light-blue"></div>
+                    <div class="color-box pink"></div>
+                    <div class="color-box purple"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box white"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/DeckChair.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Deck Chair</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+                <p><strong>Recolourable:</strong> Yes</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_DeckChair_01_Blue_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Green_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Red_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Black_Kit<br>
+                    LRPI_Furniture_DeckChair_01_LightBlue_Kit<br>
+                    LRPI_Furniture_DeckChair_01_White_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Yellow_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Grey_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Pink_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Purple_Kit<br>
+                    LRPI_Furniture_DeckChair_01_Blue<br>
+                    LRPI_Furniture_DeckChair_01_Green<br>
+                    LRPI_Furniture_DeckChair_01_Red<br>
+                    LRPI_Furniture_DeckChair_01_Black<br>
+                    LRPI_Furniture_DeckChair_01_LightBlue<br>
+                    LRPI_Furniture_DeckChair_01_White<br>
+                    LRPI_Furniture_DeckChair_01_Yellow<br>
+                    LRPI_Furniture_DeckChair_01_Grey<br>
+                    LRPI_Furniture_DeckChair_01_Pink<br>
+                    LRPI_Furniture_DeckChair_01_Purple
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box light-blue"></div>
+                    <div class="color-box pink"></div>
+                    <div class="color-box purple"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box white"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenChair.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Chair</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenChair_01_Kit<br>
+                    LRPI_Furniture_WoodenChair_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenChair2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Chair</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenChair_02_Kit<br>
+                    LRPI_Furniture_WoodenChair_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenStool1.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Stool</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenStool_01_Kit<br>
+                    LRPI_Furniture_WoodenStool_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/WoodenStool2.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Stool</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenStool_02_Kit<br>
+                    LRPI_Furniture_WoodenStool_02
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+         <div class="box">
+            <img src="Images/WoodenSwing.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Wooden Swing</p>
+                <p><strong>Lockable:</strong> No</p>
+                <p><strong>Cargo Size:</strong> 0</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_WoodenSwing_01_Kit<br>
+                    LRPI_Furniture_WoodenSwing_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/AmmoBox.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Ammo Box Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 80</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_AmmoBox_01_Pistol_Kit<br>
+                    LRPI_Furniture_AmmoBox_01_Rifle_Kit<br>
+                    LRPI_Furniture_AmmoBox_01_Shotgun_Kit<br>
+                    LRPI_Furniture_AmmoBox_01_Pistol<br>
+                    LRPI_Furniture_AmmoBox_01_Rifle<br>
+                    LRPI_Furniture_AmmoBox_01_Shotgun<br>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/GunCrate.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 36</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_GunCrate_01_Black_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Blue_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Green_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Grey_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Orange_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Red_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Tan_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Yellow_Kit<br>
+                    LRPI_Furniture_GunCrate_01_Black<br>
+                    LRPI_Furniture_GunCrate_01_Blue<br>
+                    LRPI_Furniture_GunCrate_01_Green<br>
+                    LRPI_Furniture_GunCrate_01_Grey<br>
+                    LRPI_Furniture_GunCrate_01_Orange<br>
+                    LRPI_Furniture_GunCrate_01_Red<br>
+                    LRPI_Furniture_GunCrate_01_Tan<br>
+                    LRPI_Furniture_GunCrate_01_Yellow
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box blue"></div>
+                    <div class="color-box green"></div>
+                    <div class="color-box grey"></div>
+                    <div class="color-box orange"></div>
+                    <div class="color-box red"></div>
+                    <div class="color-box tan"></div>
+                    <div class="color-box yellow"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/HandGrenade.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Hand Grenade Box Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 25</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_HandGrenadeBox_01_Kit<br>
+                    LRPI_Furniture_HandGrenadeBox_01
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/LargeGunCrate.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Large Gun Box Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 100</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_LargeGunBox_01_Rifle_Kit<br>
+                    LRPI_Furniture_LargeGunBox_01_Shotgun_Kit<br>
+                    LRPI_Furniture_LargeGunBox_01_Rifle<br>
+                    LRPI_Furniture_LargeGunBox_01_Shotgun
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/MilCrate1.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Military Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 120 / 200 / 50</p>
+                
+                <!-- Variant Dropdown -->
+                <label><strong>Variants:</strong></label>
+                <select onchange="changeImage(this)">
+                    <option value="Images/MilCrate1.PNG">Medium Military Crate</option>
+                    <option value="Images/MilCrate2.PNG">Large Military Crate</option>
+                    <option value="Images/MilCrate3.PNG">Small Military Crate</option>
+                </select>
+    
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_MilitaryCrate_01_Kit<br>
+                    LRPI_Furniture_MilitaryCrate_01<br>
+                    LRPI_Furniture_MilitaryCrate_02_Kit<br>
+                    LRPI_Furniture_MilitaryCrate_02<br>
+                    LRPI_Furniture_MilitaryCrate_03_Kit<br>
+                    LRPI_Furniture_MilitaryCrate_03
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/MortarAmmoBox.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Mortar Ammo Box Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 36</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_MortarAmmoBox_Kit<br>
+                    LRPI_Furniture_MortarAmmoBox
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/Ottoman.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Ottoman</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 200</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_Ottoman_01_Black_Kit<br>
+                    LRPI_Furniture_Ottoman_01_Cream_Kit<br>
+                    LRPI_Furniture_Ottoman_01_Brown_Kit<br>
+                    LRPI_Furniture_Ottoman_01_Black<br>
+                    LRPI_Furniture_Ottoman_01_Brown<br>
+                    LRPI_Furniture_Ottoman_01_Cream
+                </div>
+                <div class="color-boxes">
+                    <div class="color-box black"></div>
+                    <div class="color-box cream"></div>
+                    <div class="color-box brown"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/SmallGunCrate.PNG" alt="Item 2">
+            <div class="details">
+                <p><strong>NAME:</strong> Small Gun Box Crate</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 60</p>
+     
+                <!-- Classnames Codebox -->
+                <p><label><strong>Classnames:</strong></label></p>
+                <div class="codebox">
+                    LRPI_Furniture_SmallGunBox_01_Pistol_Kit<br>
+                    LRPI_Furniture_SmallGunBox_01_Submachine_Kit<br>
+                    LRPI_Furniture_SmallGunBox_01_Pistol<br>
+                    LRPI_Furniture_SmallGunBox_01_Submachine
+                </div>
             </div>
         </div>
 
-        <!-- Box 2 -->
-        <div class="box">
-            <img src="Images/GunCabinet.PNG" alt="Item 1">
-            <div class="details">
-                <p><strong>NAME:</strong> Gun Cabiner</p>
-                <p><strong>Lockable:</strong> Yes</p>
-                <p><strong>Cargo Size:</strong> 50</p>
-            </div>
-            <div class="color-boxes">
-                <div class="color-box black"></div>
-                <div class="color-box blue"></div>
-                <div class="color-box green"></div>
-                <div class="color-box grey"></div>
-                <div class="color-box light-blue"></div>
-                <div class="color-box pink"></div>
-                <div class="color-box purple"></div>
-                <div class="color-box red"></div>
-                <div class="color-box white"></div>
-                <div class="color-box yellow"></div>
-            </div>
-        </div>
 
-        <!-- Box 3 -->
-        <div class="box">
-            <img src="Images/GunCabinet.PNG" alt="Item 1">
-            <div class="details">
-                <p><strong>NAME:</strong> Gun Cabiner</p>
-                <p><strong>Lockable:</strong> Yes</p>
-                <p><strong>Cargo Size:</strong> 50</p>
-            </div>
-            <div class="color-boxes">
-                <div class="color-box black"></div>
-                <div class="color-box blue"></div>
-                <div class="color-box green"></div>
-                <div class="color-box grey"></div>
-                <div class="color-box light-blue"></div>
-                <div class="color-box pink"></div>
-                <div class="color-box purple"></div>
-                <div class="color-box red"></div>
-                <div class="color-box white"></div>
-                <div class="color-box yellow"></div>
-            </div>
-        </div>
-
-        <!-- Box 4 -->
-        <div class="box">
-            <img src="Images/GunCabinet.PNG" alt="Item 1">
-            <div class="details">
-                <p><strong>NAME:</strong> Gun Cabiner</p>
-                <p><strong>Lockable:</strong> Yes</p>
-                <p><strong>Cargo Size:</strong> 50</p>
-            </div>
-            <div class="color-boxes">
-                <div class="color-box black"></div>
-                <div class="color-box blue"></div>
-                <div class="color-box green"></div>
-                <div class="color-box grey"></div>
-                <div class="color-box light-blue"></div>
-                <div class="color-box pink"></div>
-                <div class="color-box purple"></div>
-                <div class="color-box red"></div>
-                <div class="color-box white"></div>
-                <div class="color-box yellow"></div>
-            </div>
-        </div>
-
-        <!-- Box 5 -->
-        <div class="box">
-            <img src="Images/GunCabinet.PNG" alt="Item 1">
-            <div class="details">
-                <p><strong>NAME:</strong> Gun Cabiner</p>
-                <p><strong>Lockable:</strong> Yes</p>
-                <p><strong>Cargo Size:</strong> 50</p>
-            </div>
-            <div class="color-boxes">
-                <div class="color-box black"></div>
-                <div class="color-box blue"></div>
-                <div class="color-box green"></div>
-                <div class="color-box grey"></div>
-                <div class="color-box light-blue"></div>
-                <div class="color-box pink"></div>
-                <div class="color-box purple"></div>
-                <div class="color-box red"></div>
-                <div class="color-box white"></div>
-                <div class="color-box yellow"></div>
-            </div>
-        </div>
-        </div>
     </div>
+
+    <script>
+        // Adjust codebox height to fit content
+        document.querySelectorAll('.codebox').forEach(codebox => {
+            function autoResize() {
+                codebox.style.height = 'auto';  // Reset to auto to measure scroll height
+                codebox.style.height = `${codebox.scrollHeight}px`;  // Set height to content
+            }
+            
+            autoResize();  // Initial adjustment based on content
+            codebox.addEventListener('input', autoResize);
+        });
+
+        // Function to change image based on dropdown selection
+        function changeImage(selectId, imageId) {
+            const select = document.getElementById(selectId);
+            const image = document.getElementById(imageId);
+            image.src = select.value;
+        }
+
+        function changeImage(selectElement) {
+            const box = selectElement.closest('.box'); // Get the closest box container
+            const image = box.querySelector('img'); // Find the image within the same box
+            image.src = selectElement.value; // Change the image source
+        }
+       // Function to open the modal with the clicked image
+function openModal(imageSrc) {
+    const modal = document.getElementById("imageModal");
+    const fullImage = document.getElementById("fullImage");
+    fullImage.src = imageSrc;
+    modal.style.display = "flex"; // Show the modal
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
+
+// Add click event listeners to all images in boxes
+document.querySelectorAll('.box img').forEach(img => {
+    img.addEventListener('click', function() {
+        openModal(this.src); // Open modal with clicked image source
+    });
+});
+
+// Close modal on "escape" key press
+document.addEventListener('keydown', function(event) {
+    if (event.key === "Escape") {
+        closeModal();
+    }
+});
+// Close modal when clicking anywhere outside the image
+const modal = document.getElementById("imageModal");
+        modal.addEventListener('click', function(event) {
+            // If the clicked area is the background (not the image itself), close the modal
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
