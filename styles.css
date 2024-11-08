@@ -13,7 +13,7 @@ html, body {
 
 /* Background Animation */
 body {
-    background: url('your-coding-background.jpg') repeat;
+    background: url('Images/background.jpg') repeat;
     background-size: cover;
     animation: backgroundScroll 30s linear infinite;
 }
@@ -59,12 +59,12 @@ body {
 
 /* Discord Icon */
 .icon.discord {
-    background-image: url('discord-icon.png'); /* replace with your Discord icon */
+    background-image: url('Images/discordicon.png');
 }
 
 /* Steam Icon */
 .icon.steam {
-    background-image: url('steam-icon.png'); /* replace with your Steam icon */
+    background-image: url('Images/steamicon.png');
 }
 
 /* LRPI Icon */
