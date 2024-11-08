@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRPI Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .black-box {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .home-button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .box {
+            background-color: white;
+            border: 2px solid #ddd;
+            margin: 10px;
+            padding: 20px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .box img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .box .details {
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .box .color-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .color-box {
+            width: 50px;  /* Square size */
+            height: 30px; /* Square size */
+            border: 1px solid #000;
+            display: inline-block;
+        }
+
+        .black { background-color: #000; }
+        .blue { background-color: #0000FF; }
+        .green { background-color: #008000; }
+        .grey { background-color: #808080; }
+        .light-blue { background-color: #ADD8E6; }
+        .pink { background-color: #FFC0CB; }
+        .purple { background-color: #800080; }
+        .red { background-color: #FF0000; }
+        .white { background-color: #FFFFFF; }
+        .yellow { background-color: #FFFF00; }
+    </style>
+</head>
+<body>
+    <div class="black-box">
+        <button class="home-button" onclick="window.location.href='../index.html';">Home</button>
+        <div class="header">LRPI</div>
+    </div>
+
+    <div class="container">
+        <!-- Box 1 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+            </div>
+            <div class="color-boxes">
+                <div class="color-box black"></div>
+                <div class="color-box blue"></div>
+                <div class="color-box green"></div>
+                <div class="color-box grey"></div>
+                <div class="color-box light-blue"></div>
+                <div class="color-box pink"></div>
+                <div class="color-box purple"></div>
+                <div class="color-box red"></div>
+                <div class="color-box white"></div>
+                <div class="color-box yellow"></div>
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+            </div>
+            <div class="color-boxes">
+                <div class="color-box black"></div>
+                <div class="color-box blue"></div>
+                <div class="color-box green"></div>
+                <div class="color-box grey"></div>
+                <div class="color-box light-blue"></div>
+                <div class="color-box pink"></div>
+                <div class="color-box purple"></div>
+                <div class="color-box red"></div>
+                <div class="color-box white"></div>
+                <div class="color-box yellow"></div>
+            </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+            </div>
+            <div class="color-boxes">
+                <div class="color-box black"></div>
+                <div class="color-box blue"></div>
+                <div class="color-box green"></div>
+                <div class="color-box grey"></div>
+                <div class="color-box light-blue"></div>
+                <div class="color-box pink"></div>
+                <div class="color-box purple"></div>
+                <div class="color-box red"></div>
+                <div class="color-box white"></div>
+                <div class="color-box yellow"></div>
+            </div>
+        </div>
+
+        <!-- Box 5 -->
+        <div class="box">
+            <img src="Images/GunCabinet.PNG" alt="Item 1">
+            <div class="details">
+                <p><strong>NAME:</strong> Gun Cabiner</p>
+                <p><strong>Lockable:</strong> Yes</p>
+                <p><strong>Cargo Size:</strong> 50</p>
+            </div>
+            <div class="color-boxes">
+                <div class="color-box black"></div>
+                <div class="color-box blue"></div>
+                <div class="color-box green"></div>
+                <div class="color-box grey"></div>
+                <div class="color-box light-blue"></div>
+                <div class="color-box pink"></div>
+                <div class="color-box purple"></div>
+                <div class="color-box red"></div>
+                <div class="color-box white"></div>
+                <div class="color-box yellow"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
