@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRPI Files</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .black-box {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Files Section */
+        .files-section {
+            margin: 50px 0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .file-box {
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .file-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .download-button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .download-button:hover {
+            background-color: #555;
+        }
+
+        /* Box for "What these files do" with dynamic size */
+        .info-box {
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 20px;
+            width: 1500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            margin: 50px auto; /* Centered with auto margins */
+            box-sizing: border-box; /* Ensure padding is included in width/height calculations */
+            min-height: 100px; /* Optional: makes the box have a minimum height */
+        }
+
+        .info-box h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 0; /* Optional: to remove extra space if needed */
+            line-height: 1.5; /* Optional: improves readability */
+        }
+        .home-button {
+            background-color: #fff;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        pre {
+            font-size: 16px;
+            text-align: left;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="black-box">
+        <button class="home-button" onclick="window.location.href='../index.html';">Home</button>
+        <div class="header">LRPI Files</div>
+        
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="lrpi.html">Furniture</a>
+            <a href="items.html">Items</a>
+            <a href="updates.html">Updates</a>
+            <a href="files.html">Files</a>
+        </div>
+    </div>
+
+    <!-- New Box for "What these files do" (Centered above files) -->
+    <div class="info-box">
+        <h3>What these files do</h3>
+        <pre>
+&lt;nominal&gt;2&lt;/nominal&gt;: This is the nominal (or default) quantity of the item in the world. In this case, the game will try to have 2 of this item at a time in the world.
+
+&lt;lifetime&gt;14400&lt;/lifetime&gt;: The lifetime of this item is set to 14,400 seconds (or 4 hours). This means after 4 hours, the item will despawn or be removed from the game world unless interacted with.
+
+&lt;restock&gt;1800&lt;/restock&gt;: This refers to how often the item is restocked in the game world. The value is set to 1,800 seconds (or 30 minutes), meaning the item can respawn in the game world every 30 minutes.
+
+&lt;min&gt;1&lt;/min&gt;: The minimum number of items that should exist in the world. In this case, at least 1 of this item should always be present.
+
+&lt;quantmin&gt;-1&lt;/quantmin&gt; &amp; &lt;quantmax&gt;-1&lt;/quantmax&gt;: These define the minimum and maximum quantities for the item, but since both are set to -1, it means there are no restrictions on the amount of the item that can exist. It can be any quantity.
+
+&lt;category name=""/&gt;: This would define a category for the item, but it's left empty in this case, meaning it’s not categorized.
+
+&lt;tag name="floor"/&gt;: The item is tagged as being associated with the floor, so it's probably something that can be placed or found on the floor in buildings or structures.
+
+&lt;usage name="Coast"/&gt;, &lt;usage name="Farm"/&gt;, &lt;usage name="Industrial"/&gt;, etc.: These define the locations or environments where the item is used or found. It will be present in coastal areas, farms, industrial zones, offices, schools, towns, and villages.
+
+&lt;value name="Tier1"/&gt;, &lt;value name="Tier2"/&gt;, &lt;value name="Tier3"/&gt;: These define the tiers or levels the item belongs to. The item is available in all three tiers, meaning it could be found in low, medium, or high-tier loot areas or serve as an item for different gameplay stages.
+</pre>
+    </div>
+
+    <div class="files-section">
+        <!-- File Box 1: Types.xml -->
+        <div class="file-box">
+            <h3>Types</h3>
+            <p>Types.xml file for server owners.</p>
+            <a href="Files/types.xml" download="types.xml" class="download-button">Download Types.xml</a>
+        </div>
+
+        <!-- Add more file boxes as needed -->
+    </div>
+
+</body>
+</html>
