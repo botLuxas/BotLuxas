@@ -144,12 +144,41 @@
         cursor: pointer;
     }
 
+    /* Navigation Links */
+    .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
     </style>
 </head>
 <body>
     <div class="black-box">
         <button class="home-button" onclick="window.location.href='../index.html';">Home</button>
         <div class="header">LRPI</div>
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="lrpi.html">Furniture</a>
+            <a href="items.html">Items</a>
+            <a href="updates.html">Updates</a>
+            <a href="files.html">Files</a>
+        </div>
     </div>
 
     <div class="container">

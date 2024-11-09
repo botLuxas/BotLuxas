@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRPI Updates</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .black-box {
+            width: 100%;
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #555;
+        }
+
+        /* Updates Section */
+        .updates-section {
+            margin: 50px 0;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .update-post {
+            background-color: #fff;
+            border: 2px solid #ddd;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .update-post h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .update-post .date-time {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .update-post .changelog {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
+        .update-post .changelog ul {
+            list-style-type: none; /* Removed default bullet points */
+            margin-left: 20px;
+        }
+
+        .update-post .changelog {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 15px;
+    white-space: pre-line; /* Preserve line breaks */
+}
+
+        /* For indented items, apply margin-left for visual indentation */
+.update-post .changelog .small-bullet {
+    list-style-type: disc;
+    font-size: 14px;
+    margin-left: 40px;  /* Indentation for indented items */
+}
+
+.update-post .changelog .plain-text {
+    font-size: 16px;
+    margin-left: 0;
+}
+    </style>
+</head>
+<body>
+
+    <div class="black-box">
+        <div class="header">LRPI Updates</div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="lrpi.html">Furniture</a>
+            <a href="items.html">Items</a>
+            <a href="updates.html">Updates</a>
+            <a href="files.html">Files</a>
+        </div>
+    </div>
+
+    <div id="updates-container"></div>
+
+    <script>
+        // Array of updates with plain text changelog input
+        const updates = [
+        {
+                title: "Update #3",
+                date: "October 23, 2024",
+                time: "19:30 PM",
+                changelogText: `
+**Fixed**
+Fixed an issue with GunCrate Sound causing crash logs
+Fixed an issue with Furniture Items not being able to hold any items inside clothing
+\n\n
+**Added**
+Added new Dismantle Distance check, dismantle distance is now set to 1m from the item
+Added Pistol Cabinet (LRPI_Furniture_PistolCabinet_01_Kit, LRPI_Furniture_PistolCabinet_01)
+Added Armband Cabinet (LRPI_Furniture_ArmbandCabinet_01_Kit, LRPI_Furniture_ArmbandCabinet_01)
+\n\n
+Added Halloween Seasonal Furniture
+Added Placeable Pumpkin Lanterns (LRPI_Seasonal_H_Lantern_01_Kit, LRPI_Seasonal_H_Lantern_01_Kit, LRPI_Seasonal_H_Lantern_03_Kit, LRPI_Seasonal_H_Lantern_04_Kit, LRPI_Seasonal_H_Lantern_05_Kit, LRPI_Seasonal_H_Lantern_06_Kit, LRPI_Seasonal_H_Lantern_07_Kit, LRPI_Seasonal_H_Lantern_08_Kit, LRPI_Seasonal_H_Lantern_01, LRPI_Seasonal_H_Lantern_02, LRPI_Seasonal_H_Lantern_03, LRPI_Seasonal_H_Lantern_04, LRPI_Seasonal_H_Lantern_05, LRPI_Seasonal_H_Lantern_06, LRPI_Seasonal_H_Lantern_07, LRPI_Seasonal_H_Lantern_08)
+Added Throne (LRPI_Seasonal_H_Throne_01_Kit, LRPI_Seasonal_H_Throne_01)
+Added Coffins (LRPI_Seasonal_H_Coffin_01_Kit, LRPI_Seasonal_H_Coffin_01, LRPI_Seasonal_H_Coffin_02_Kit, LRPI_Seasonal_H_Coffin_02)
+Added Skeleton (LRPI_Seasonal_H_Skeleton_01_Kit, LRPI_Seasonal_H_Skeleton_01)
+Added Ghost (LRPI_Seasonal_H_Ghost_01_Kit, LRPI_Seasonal_H_Ghost_01)
+Added Cookies (LRPI_Items_Cookie_01, LRPI_Items_Cookie_02, LRPI_Items_Cookie_03, LRPI_Items_Cookie_04, LRPI_Items_Cookie_05, LRPI_Items_Cookie_06, LRPI_Items_Cookie_07, LRPI_Items_Cookie_08)
+\n\n
+**Updated**
+Updated Name and Description for Umbrellas (Changed to Canopy and Pergola)
+Updated Description for Large Gun Box Crate
+Updated Light_04 Street Light Texture
+\n\n
+\n\n
+For the Halloween Seasonal Furniture the naming convention is slightly different, all items begin with:
+LRPI_Seasonal
+                `
+            },
+            {
+                title: "Update #2",
+                date: "October 16, 2024",
+                time: "19:00 PM",
+                changelogText: `
+**Fixed**
+Fixed Umbrella_01 Textures not applying correctly
+\n\n
+**Added**
+Added CashRegister_02 (LRPI_Furniture_CashRegister_02_Kit, LRPI_Furniture_CashRegister_02)
+\n\n
+**Updated**
+Updated Storage Sizes
+Old size is the first number, second is the new number.
+So 80 is the old, 120 is the new.
+- FileCabinet_01 80/120
+- GunCabinet_01 25/50
+- MedicalCabinet_02 30/50
+- WoodenCabinet_01 100/250
+- WoodenCabinet_03 80/200
+- AmmoBox_01 48/80
+- HandGrenadeBox_01 20/25
+- LargeGunBox_01 48/100
+- MilitaryCrate_01 80/120
+- MilitaryCrate_02 150/200
+- MilitaryCrate_03 30/50
+- SmallGunBox_01 36/60
+- Fridge_01 100/250
+- Fridge_02 100/250
+- GunWall_01 25/50
+- Locker_01 20/80
+- Locker_02 28/80
+                `
+            },
+            {
+                title: "Update #1",
+                date: "October 12, 2024",
+                time: "16:00 PM",
+                changelogText: `
+**Fixed**
+Fixed Umbrella texture not applying correctly
+Fixed GlowPlug not being able to be attached to the Toolbench_02
+Fixed Crashlog Error for Open/Close sound (Recommend server owners to clear crash logs)
+\n\n
+**Added**
+Added WoodenCabinet_04 (LRPI_Furniture_WoodenCabinet_04_Kit, LRPI_Furniture_WoodenCabinet_04)
+Added CoffeeTable_01 (LRPI_Furniture_CoffeeTable_01_Kit, LRPI_Furniture_CoffeeTable_01)
+Added CoffeeTable_02 (LRPI_Furniture_CoffeeTable_02_Kit, LRPI_Furniture_CoffeeTable_02)
+Added Photos (LRPI_Furniture_PhotoFrame_28_Kit, LRPI_Furniture_PhotoFrame_28, LRPI_Furniture_PhotoFrame_29_Kit, LRPI_Furniture_PhotoFrame_29)
+Added Shelf_05 (LRPI_Furniture_Shelf_05_Black_Kit, LRPI_Furniture_Shelf_05_Blue_Kit, LRPI_Furniture_Shelf_05_Green_Kit, LRPI_Furniture_Shelf_05_Purple_Kit, LRPI_Furniture_Shelf_05_Red_Kit, LRPI_Furniture_Shelf_05_Yellow_Kit, LRPI_Furniture_Shelf_05_Black, LRPI_Furniture_Shelf_05_Blue, LRPI_Furniture_Shelf_05_Green, LRPI_Furniture_Shelf_05_Purple, LRPI_Furniture_Shelf_05_Red, LRPI_Furniture_Shelf_05_Yellow)
+Added Sound Effects to Safes & GunCase
+Added Repair options to:
+- Computer Parts (Electronic Repair Kit)
+- Postcards (Ducttape)
+- Tarot Cards (Ducttape)
+- Plushies (Sewing Kit)
+- Wallet (Leather Repair Kit)
+\n\n
+**Updated**
+Updated all damage textures for Items
+                `
+            }
+        ];
+
+    // Function to convert plain text changelog into an array of items
+    function parseChangelog(changelogText) {
+        // Split text by single newlines
+        const items = changelogText.split('\n').map(item => item.trim());
+        const parsedItems = [];
+
+        for (let i = 0; i < items.length; i++) {
+            if (items[i] === "" && items[i + 1] === "") {
+                // Double newline detected; add a spacer or empty line
+                parsedItems.push("<br><br>");  // Adds extra spacing
+                i++; // Skip the next newline
+            } else if (items[i].length > 0) {
+                // Normal line, add to parsed items
+                parsedItems.push(items[i]);
+            }
+        }
+
+        return parsedItems;
+    }
+
+    // Function to split changelog by paragraphs (using double newlines)
+    function parseChangelog(changelogText) {
+        // Split by double newline to identify paragraphs
+        return changelogText.split('\n\n').map(paragraph => paragraph.trim()).filter(item => item.length > 0);
+    }
+
+    // Function to generate update posts dynamically
+    function createUpdatePost(update) {
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('update-post');
+
+        const title = document.createElement('h2');
+        title.textContent = update.title;
+        postDiv.appendChild(title);
+
+        const dateTime = document.createElement('div');
+        dateTime.classList.add('date-time');
+        dateTime.textContent = `Date: ${update.date} | Time: ${update.time}`;
+        postDiv.appendChild(dateTime);
+
+        const changelogDiv = document.createElement('div');
+        changelogDiv.classList.add('changelog');
+        const changelogTitle = document.createElement('h3');
+        changelogTitle.textContent = 'Changelog:';
+        changelogDiv.appendChild(changelogTitle);
+
+        const changelogList = document.createElement('ul');
+        const changelogParagraphs = parseChangelog(update.changelogText);
+
+        changelogParagraphs.forEach(paragraph => {
+            // Further split each paragraph into lines
+            const lines = paragraph.split('\n').map(line => line.trim());
+            
+            lines.forEach((line, index) => {
+                const listItem = document.createElement('li');
+
+                if (line.startsWith('**')) {
+                    // Header line
+                    listItem.innerHTML = `<strong>${line.replace(/\*\*/g, '')}</strong>`;
+                    listItem.classList.add('h2');
+                } else if (line.startsWith('-')) {
+                    // Indented line
+                    listItem.textContent = line.replace(/^-/, '').trim();
+                    listItem.classList.add('small-bullet');
+                    listItem.style.marginLeft = '40px';
+                } else {
+                    // Regular line
+                    listItem.innerHTML = line;
+                    listItem.classList.add('plain-text');
+                }
+
+                changelogList.appendChild(listItem);
+            });
+
+            // Add extra spacing between paragraphs
+            const spacer = document.createElement('li');
+            spacer.innerHTML = '<br>';
+            changelogList.appendChild(spacer);
+        });
+
+        changelogDiv.appendChild(changelogList);
+        postDiv.appendChild(changelogDiv);
+
+        return postDiv;
+    }
+
+    // Loop through the updates and add each post to the container
+    const updatesContainer = document.getElementById('updates-container');
+    updates.forEach(update => {
+        const updatePost = createUpdatePost(update);
+        updatesContainer.appendChild(updatePost);
+    });
+    </script>
+</body>
+</html>
